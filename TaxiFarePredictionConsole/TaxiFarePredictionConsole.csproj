@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="2.0.0" />
+    <PackageReference Include="Microsoft.ML.LightGbm" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup Label="TaxiFarePrediction">
+    <None Include="TaxiFarePrediction.consumption.cs">
+      <DependentUpon>TaxiFarePrediction.mbconfig</DependentUpon>
+    </None>
+    <None Include="TaxiFarePrediction.training.cs">
+      <DependentUpon>TaxiFarePrediction.mbconfig</DependentUpon>
+    </None>
+    <None Include="TaxiFarePrediction.mlnet">
+      <DependentUpon>TaxiFarePrediction.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

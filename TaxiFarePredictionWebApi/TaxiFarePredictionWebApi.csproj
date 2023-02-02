@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>12561e9e-3b86-46e4-8d56-951547f4a7dc</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.ML" Version="1.5.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="Microsoft.ML" Version="2.0.0" />
+    <PackageReference Include="Microsoft.ML.LightGbm" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup Label="TaxiFarePrediction">
+    <None Include="TaxiFarePrediction.consumption.cs">
+      <DependentUpon>TaxiFarePrediction.mbconfig</DependentUpon>
+    </None>
+    <None Include="TaxiFarePrediction.training.cs">
+      <DependentUpon>TaxiFarePrediction.mbconfig</DependentUpon>
+    </None>
+    <None Include="TaxiFarePrediction.mlnet">
+      <DependentUpon>TaxiFarePrediction.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
